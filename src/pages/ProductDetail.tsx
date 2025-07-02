@@ -25,9 +25,7 @@ const ProductDetail = () => {
     rating: 4.8,
     reviewCount: 127,
     images: [
-      "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=600&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=600&h=600&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=600&h=600&fit=crop&q=80"
+      "./assets/Picture3.png",
     ],
     ingredients: [
       "Dattes Medjool premium",

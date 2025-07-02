@@ -40,7 +40,7 @@ const HeroSection = () => {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-moroccan-dark-brown font-semibold px-8 py-3 text-lg transition-all duration-300 transform hover:scale-105"
+                className="border-2 border-white text-black hover:bg-white hover:text-moroccan-dark-brown font-semibold px-8 py-3 text-lg transition-all duration-300 transform hover:scale-105"
               >
                 Commander maintenant
               </Button>
@@ -54,7 +54,7 @@ const HeroSection = () => {
             </div>
             <div className="space-y-2">
               <div className="text-3xl md:text-4xl font-serif font-bold text-moroccan-gold">2023</div>
-              <div className="text-sm uppercase tracking-wide">Fondé à Casablanca</div>
+              <div className="text-sm uppercase tracking-wide">Fondé à Settat</div>
             </div>
             <div className="space-y-2">
               <div className="text-3xl md:text-4xl font-serif font-bold text-moroccan-gold">♡</div>

@@ -97,7 +97,7 @@ const Contact = () => {
                       <h4 className="font-semibold text-moroccan-brown">Adresse</h4>
                       <p className="text-muted-foreground">
                         123 Boulevard Mohammed V<br />
-                        Casablanca 20000<br />
+                        Settat 20000<br />
                         Maroc
                       </p>
                     </div>
@@ -179,7 +179,7 @@ const Contact = () => {
                   <div className="text-center text-muted-foreground">
                     <div className="text-4xl mb-2">🗺️</div>
                     <p>Carte Google Maps</p>
-                    <p className="text-sm">123 Boulevard Mohammed V, Casablanca</p>
+                    <p className="text-sm">123 Boulevard Mohammed V, Settat</p>
                   </div>
                 </div>
               </CardContent>

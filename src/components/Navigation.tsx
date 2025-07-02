@@ -40,6 +40,7 @@ const Navigation = () => {
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
+          <img className="w-20 mt-20 mb-2" src="./assets/Tazedates.png" alt="Logo TAZEDATES" />
           <div className="text-2xl font-serif font-bold text-moroccan-brown">
             TAZE<span className="text-moroccan-gold">DATES</span>
           </div>

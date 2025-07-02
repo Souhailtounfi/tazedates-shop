@@ -15,16 +15,16 @@ const Shop = () => {
       name: "Rose Framboise",
       price: 29.99,
       originalPrice: 34.99,
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&q=80",
+      image: "./assets/Picture3.png",
       rating: 4.8,
       isNew: true,
       category: "dattes"
     },
     {
       id: 2,
-      name: "Pistache Royale",
+      name: "Dattes Royale",
       price: 34.99,
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&q=80",
+      image: "./assets/Picture3.png",
       rating: 4.9,
       isBestSeller: true,
       category: "dattes"
@@ -33,7 +33,7 @@ const Shop = () => {
       id: 3,
       name: "Sucre de Dattes Bio",
       price: 19.99,
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&q=80",
+      image: "./assets/Picture3.png",
       rating: 4.7,
       category: "sucre"
     },
@@ -41,7 +41,7 @@ const Shop = () => {
       id: 4,
       name: "Coffret Découverte",
       price: 39.99,
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&q=80",
+      image: "./assets/Picture3.png",
       rating: 4.8,
       category: "coffrets"
     },
@@ -49,7 +49,7 @@ const Shop = () => {
       id: 5,
       name: "Noix & Miel",
       price: 31.99,
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&q=80",
+      image: "./assets/Picture3.png",
       rating: 4.7,
       category: "dattes"
     },
@@ -57,7 +57,7 @@ const Shop = () => {
       id: 6,
       name: "Coffret Prestige",
       price: 69.99,
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&q=80",
+      image: "./assets/Picture3.png",
       rating: 4.9,
       isBestSeller: true,
       category: "coffrets"
@@ -148,11 +148,11 @@ const Shop = () => {
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-2">
                     <span className="text-2xl font-bold text-moroccan-gold">
-                      {product.price}€
+                      {product.price} DH
                     </span>
                     {product.originalPrice && (
                       <span className="text-sm text-muted-foreground line-through">
-                        {product.originalPrice}€
+                        {product.originalPrice} DH
                       </span>
                     )}
                   </div>
@@ -183,22 +183,22 @@ const Shop = () => {
             <div className="space-y-3 mb-4">
               <div className="flex justify-between text-sm">
                 <span>Rose Framboise x1</span>
-                <span>29.99€</span>
+                <span>29.99 DH</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span>Sucre de Dattes x2</span>
-                <span>39.98€</span>
+                <span>39.98 DH</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span>Coffret Découverte x1</span>
-                <span>39.99€</span>
+                <span>39.99 DH</span>
               </div>
             </div>
             
             <div className="border-t pt-4 space-y-2">
               <div className="flex justify-between">
                 <span>Sous-total</span>
-                <span>109.96€</span>
+                <span>109.96 DH</span>
               </div>
               <div className="flex justify-between text-sm text-muted-foreground">
                 <span>Frais de livraison</span>
@@ -206,7 +206,7 @@ const Shop = () => {
               </div>
               <div className="flex justify-between font-bold text-lg text-moroccan-gold">
                 <span>Total</span>
-                <span>109.96€</span>
+                <span>109.96 DH</span>
               </div>
             </div>
             

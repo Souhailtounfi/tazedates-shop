@@ -12,18 +12,18 @@ const Products = () => {
     {
       id: 1,
       name: "Rose Framboise",
-      description: "Dattes fourrées à la rose et framboises, un mariage délicat et parfumé",
-      price: "29.99€",
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&q=80",
+      description: "Dattes délicatement fourrées à la rose et à la framboise, pour une expérience florale et fruitée raffinée. Un mariage élégant entre douceur et parfum.",
+      price: "59.99 DH",
+      image: "./assets/Picture1.png",
       rating: 4.8,
       isNew: true
     },
     {
       id: 2,
-      name: "Pistache Royale",
+      name: "Dattes Royale",
       description: "Dattes premium fourrées aux pistaches grillées du Maroc",
-      price: "34.99€",
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&q=80",
+      price: "52.99 DH",
+      image: "./assets/Picture2.png",
       rating: 4.9,
       isBestSeller: true
     },
@@ -31,33 +31,33 @@ const Products = () => {
       id: 3,
       name: "Noix & Miel",
       description: "Alliance parfaite entre noix croquantes et miel d'acacia",
-      price: "31.99€",
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&q=80",
+      price: "73.99 DH",
+      image: "./assets/Picture3.png",
       rating: 4.7
     },
     {
       id: 4,
-      name: "Coco Exotique",
+      name: "Dattes aux Fruits secs oléagineux",
       description: "Dattes fourrées à la noix de coco râpée et vanille bourbon",
-      price: "28.99€",
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&q=80",
+      price: "74.99 DH",
+      image: "./assets/Picture4.png",
       rating: 4.6
     },
     {
       id: 5,
-      name: "Biscuit Spéculoos",
+      name: "Dattes enrobées Spéculoos & Chocolat",
       description: "Innovation gourmande avec des biscuits spéculoos artisanaux",
-      price: "32.99€",
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&q=80",
+      price: "68.99 DH",
+      image: "./assets/Picture5.png",
       rating: 4.8,
       isNew: true
     },
     {
       id: 6,
-      name: "Amandes Pralinées",
+      name: "Dattes Pralinées aux Amandes",
       description: "Dattes fourrées aux amandes pralinées à l'ancienne",
-      price: "33.99€",
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&q=80",
+      price: "33.99 DH",
+      image: "./assets/Picture6.png",
       rating: 4.7
     }
   ];
@@ -186,7 +186,7 @@ const Products = () => {
               </div>
               
               <div className="flex items-center space-x-4">
-                <span className="text-3xl font-bold text-moroccan-gold">19.99€</span>
+                <span className="text-3xl font-bold text-moroccan-gold">89.99 DH</span>
                 <Button className="bg-moroccan-gold hover:bg-moroccan-gold/90 text-moroccan-dark-brown">
                   Ajouter au panier
                 </Button>
@@ -230,7 +230,7 @@ const Products = () => {
                 <p className="text-muted-foreground mb-4">
                   6 dattes fourrées de saveurs différentes
                 </p>
-                <div className="text-2xl font-bold text-moroccan-gold mb-4">39.99€</div>
+                <div className="text-2xl font-bold text-moroccan-gold mb-4">69.99 DH</div>
                 <Button className="w-full bg-moroccan-brown hover:bg-moroccan-brown/90 text-white">
                   Commander
                 </Button>
@@ -247,7 +247,7 @@ const Products = () => {
                 <p className="text-muted-foreground mb-4">
                   12 dattes fourrées premium + sucre de dattes
                 </p>
-                <div className="text-2xl font-bold text-moroccan-gold mb-4">69.99€</div>
+                <div className="text-2xl font-bold text-moroccan-gold mb-4">89.99 DH</div>
                 <Button className="w-full bg-moroccan-gold hover:bg-moroccan-gold/90 text-moroccan-dark-brown">
                   Commander
                 </Button>
@@ -263,7 +263,7 @@ const Products = () => {
                 <p className="text-muted-foreground mb-4">
                   24 dattes fourrées d'exception + accessoires
                 </p>
-                <div className="text-2xl font-bold text-moroccan-gold mb-4">129.99€</div>
+                <div className="text-2xl font-bold text-moroccan-gold mb-4">159.99 DH</div>
                 <Button className="w-full bg-moroccan-brown hover:bg-moroccan-brown/90 text-white">
                   Commander
                 </Button>

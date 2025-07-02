@@ -155,7 +155,7 @@ const Index = () => {
               <Button 
                 size="lg"
                 variant="outline"
-                className="border-moroccan-cream text-moroccan-cream hover:bg-moroccan-cream hover:text-moroccan-brown"
+                className="border-moroccan-cream text-moroccan-brown hover:bg-moroccan-cream hover:text-moroccan-brown"
               >
                 Nous contacter
               </Button>

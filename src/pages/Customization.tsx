@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -19,19 +18,19 @@ const Customization = () => {
   const [isGift, setIsGift] = useState(false);
 
   const flavors = [
-    { id: "rose-framboise", name: "Rose Framboise", price: 2.5 },
-    { id: "pistache", name: "Pistache Royale", price: 3.0 },
-    { id: "noix-miel", name: "Noix & Miel", price: 2.8 },
-    { id: "coco", name: "Coco Exotique", price: 2.4 },
-    { id: "speculoos", name: "Biscuit Spéculoos", price: 2.7 },
-    { id: "amandes", name: "Amandes Pralinées", price: 2.9 },
-    { id: "orange", name: "Orange Confite", price: 2.6 },
-    { id: "chocolat", name: "Chocolat Noir", price: 3.2 }
+    { id: "rose-framboise", name: "Rose Framboise", price: 25.0 },
+    { id: "pistache", name: "Dattes Royale", price: 30.0 },
+    { id: "noix-miel", name: "Dattes aux Noix & Miel", price: 20.8 },
+    { id: "coco", name: "Dattes aux Fruits secs oléagineux", price: 21.4 },
+    { id: "speculoos", name: "Dattes enrobées Spéculoos & Chocolat", price: 22.7 },
+    { id: "amandes", name: "Dattes Pralinées aux Amandes", price: 29.99 },
+    { id: "orange", name: "Dattes à l'Orange Confite", price: 30.6 },
+    { id: "chocolat", name: "Dattes au Chocolat Noir", price: 31.2 }
   ];
 
   const boxSizes = [
-    { value: "6", label: "6 dattes", basePrice: 18 },
-    { value: "12", label: "12 dattes", basePrice: 32 },
+    { value: "6", label: "6 dattes", basePrice: 24 },
+    { value: "12", label: "12 dattes", basePrice: 38 },
     { value: "24", label: "24 dattes", basePrice: 58 },
     { value: "36", label: "36 dattes", basePrice: 82 }
   ];
@@ -47,22 +46,34 @@ const Customization = () => {
       value: "premium", 
       label: "Coffret Premium", 
       description: "Boîte luxueuse avec finitions dorées",
-      extraPrice: 8
+      extraPrice: 12
     },
     { 
       value: "business", 
       label: "Coffret Corporate", 
       description: "Design élégant pour cadeaux d'entreprise",
-      extraPrice: 12
+      extraPrice: 20
     }
   ];
 
+  // Fix: Prevent selecting more flavors than box size, and allow unchecking
   const handleFlavorChange = (flavorId: string, checked: boolean) => {
     const maxFlavors = parseInt(boxSize);
-    if (checked && selectedFlavors.length < maxFlavors) {
-      setSelectedFlavors([...selectedFlavors, flavorId]);
-    } else if (!checked) {
+    if (checked) {
+      if (!selectedFlavors.includes(flavorId) && selectedFlavors.length < maxFlavors) {
+        setSelectedFlavors([...selectedFlavors, flavorId]);
+      }
+    } else {
       setSelectedFlavors(selectedFlavors.filter(id => id !== flavorId));
+    }
+  };
+
+  // Fix: Reset selected flavors if box size is reduced below current selection
+  const handleBoxSizeChange = (value: string) => {
+    setBoxSize(value);
+    const maxFlavors = parseInt(value);
+    if (selectedFlavors.length > maxFlavors) {
+      setSelectedFlavors(selectedFlavors.slice(0, maxFlavors));
     }
   };
 
@@ -73,7 +84,6 @@ const Customization = () => {
       const flavor = flavors.find(f => f.id === flavorId);
       return total + (flavor?.price || 0);
     }, 0);
-    
     return (selectedBoxSize?.basePrice || 0) + (selectedBoxType?.extraPrice || 0) + flavorPrices;
   };
 
@@ -105,7 +115,7 @@ const Customization = () => {
                 <h2 className="text-2xl font-serif font-bold text-moroccan-brown mb-6">
                   1. Choisissez la taille de votre coffret
                 </h2>
-                <RadioGroup value={boxSize} onValueChange={setBoxSize}>
+                <RadioGroup value={boxSize} onValueChange={handleBoxSizeChange}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {boxSizes.map((size) => (
                       <div key={size.value} className="flex items-center space-x-2">
@@ -113,7 +123,7 @@ const Customization = () => {
                         <Label htmlFor={size.value} className="flex-1 cursor-pointer">
                           <div className="flex justify-between items-center p-4 border rounded-lg hover:bg-moroccan-cream/30 transition-colors">
                             <span className="font-medium">{size.label}</span>
-                            <span className="text-moroccan-gold font-bold">{size.basePrice}€</span>
+                            <span className="text-moroccan-gold font-bold">{size.basePrice} DH</span>
                           </div>
                         </Label>
                       </div>
@@ -136,12 +146,15 @@ const Customization = () => {
                         id={flavor.id}
                         checked={selectedFlavors.includes(flavor.id)}
                         onCheckedChange={(checked) => handleFlavorChange(flavor.id, checked as boolean)}
-                        disabled={!selectedFlavors.includes(flavor.id) && selectedFlavors.length >= parseInt(boxSize)}
+                        disabled={
+                          !selectedFlavors.includes(flavor.id) &&
+                          selectedFlavors.length >= parseInt(boxSize)
+                        }
                       />
                       <Label htmlFor={flavor.id} className="flex-1 cursor-pointer">
                         <div className="flex justify-between items-center p-3 border rounded-lg hover:bg-moroccan-cream/30 transition-colors">
                           <span>{flavor.name}</span>
-                          <span className="text-moroccan-gold font-medium">+{flavor.price}€</span>
+                          <span className="text-moroccan-gold font-medium">+{flavor.price} DH</span>
                         </div>
                       </Label>
                     </div>
@@ -166,7 +179,7 @@ const Customization = () => {
                             <div className="flex justify-between items-start mb-2">
                               <span className="font-medium">{type.label}</span>
                               <span className="text-moroccan-gold font-bold">
-                                {type.extraPrice > 0 ? `+${type.extraPrice}€` : 'Inclus'}
+                                {type.extraPrice > 0 ? `+${type.extraPrice} DH` : 'Inclus'}
                               </span>
                             </div>
                             <p className="text-sm text-muted-foreground">{type.description}</p>
@@ -190,7 +203,7 @@ const Customization = () => {
                     <Checkbox
                       id="gift"
                       checked={isGift}
-                      onCheckedChange={setIsGift}
+                      onCheckedChange={(checked) => setIsGift(!!checked)}
                     />
                     <Label htmlFor="gift">C'est un cadeau</Label>
                   </div>
@@ -256,7 +269,7 @@ const Customization = () => {
                         return (
                           <li key={flavorId} className="flex justify-between">
                             <span>{flavor?.name}</span>
-                            <span className="text-moroccan-gold">+{flavor?.price}€</span>
+                            <span className="text-moroccan-gold">+{flavor?.price} DH</span>
                           </li>
                         );
                       })}
@@ -268,12 +281,12 @@ const Customization = () => {
                 <div className="space-y-2 text-sm border-t pt-4">
                   <div className="flex justify-between">
                     <span>Coffret de base ({boxSize} dattes)</span>
-                    <span>{boxSizes.find(s => s.value === boxSize)?.basePrice}€</span>
+                    <span>{boxSizes.find(s => s.value === boxSize)?.basePrice} DH</span>
                   </div>
                   {boxTypes.find(t => t.value === boxType)?.extraPrice! > 0 && (
                     <div className="flex justify-between">
                       <span>Type de coffret</span>
-                      <span>+{boxTypes.find(t => t.value === boxType)?.extraPrice}€</span>
+                      <span>+{boxTypes.find(t => t.value === boxType)?.extraPrice} DH</span>
                     </div>
                   )}
                   <div className="flex justify-between">
@@ -281,11 +294,11 @@ const Customization = () => {
                     <span>+{selectedFlavors.reduce((total, flavorId) => {
                       const flavor = flavors.find(f => f.id === flavorId);
                       return total + (flavor?.price || 0);
-                    }, 0).toFixed(1)}€</span>
+                    }, 0).toFixed(1)} DH</span>
                   </div>
                   <div className="flex justify-between font-bold text-lg text-moroccan-gold border-t pt-2">
                     <span>Total</span>
-                    <span>{calculateTotal().toFixed(2)}€</span>
+                    <span>{calculateTotal().toFixed(2)} DH</span>
                   </div>
                 </div>
 
@@ -300,7 +313,7 @@ const Customization = () => {
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center mt-4">
-                  Livraison gratuite à partir de 50€
+                  Livraison gratuite à partir de 50 DH
                 </p>
               </CardContent>
             </Card>

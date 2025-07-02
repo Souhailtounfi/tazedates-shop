@@ -11,9 +11,9 @@ const Blog = () => {
       id: 1,
       title: "Recettes Gourmandes avec nos Dattes Fourrées",
       excerpt: "Découvrez comment incorporer nos dattes dans vos desserts préférés pour une touche marocaine authentique.",
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=600&h=400&fit=crop&q=80",
+      image: "./assets/Picture1.png",
       category: "Recettes",
-      date: "15 Mars 2024",
+      date: "15 Mars 2023",
       readTime: "5 min",
       featured: true
     },
@@ -21,45 +21,45 @@ const Blog = () => {
       id: 2,
       title: "Les Bienfaits du Sucre de Dattes sur la Santé",
       excerpt: "Alternative naturelle au sucre blanc, découvrez pourquoi le sucre de dattes est meilleur pour votre santé.",
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=600&h=400&fit=crop&q=80",
+      image: "./assets/Picture5.png",
       category: "Santé",
-      date: "12 Mars 2024",
+      date: "12 Mars 2023",
       readTime: "7 min"
     },
     {
       id: 3,
       title: "L'Art de la Dégustation des Dattes au Maroc",
       excerpt: "Plongez dans les traditions marocaines et apprenez à apprécier pleinement nos créations artisanales.",
-      image: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=600&h=400&fit=crop&q=80",
+      image: "./assets/encg.png",
       category: "Culture",
-      date: "8 Mars 2024",
+      date: "8 Mars 2023",
       readTime: "6 min"
     },
     {
       id: 4,
       title: "Dans les Coulisses de notre Atelier",
       excerpt: "Découvrez comment nos artisans créent chaque datte fourrée avec passion et savoir-faire traditionnel.",
-      image: "https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?w=600&h=400&fit=crop&q=80",
+      image: "./assets/Desert.png",
       category: "Artisanat",
-      date: "5 Mars 2024",
+      date: "5 Mars 2023",
       readTime: "8 min"
     },
     {
       id: 5,
-      title: "Ramadan 2024 : Nos Coffrets Spéciaux",
+      title: "Ramadan 2023 : Nos Coffrets Spéciaux",
       excerpt: "Célébrez le mois sacré avec nos créations spécialement conçues pour accompagner vos moments de partage.",
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=600&h=400&fit=crop&q=80",
+      image: "./assets/Picture4.png",
       category: "Actualités",
-      date: "1 Mars 2024",
+      date: "1 Mars 2023",
       readTime: "4 min"
     },
     {
       id: 6,
       title: "Agriculture Durable : Notre Engagement Écologique",
       excerpt: "Comment nous recyclons les noyaux de dattes en cosmétiques et soutenons une agriculture responsable.",
-      image: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=600&h=400&fit=crop&q=80",
+      image: "./assets/Picture3.png",
       category: "Environnement",
-      date: "25 Février 2024",
+      date: "25 Février 2023",
       readTime: "6 min"
     }
   ];
