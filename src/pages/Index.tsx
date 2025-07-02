@@ -30,7 +30,7 @@ const Index = () => {
             <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="aspect-square overflow-hidden rounded-t-lg">
                 <img 
-                  src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=400&fit=crop&q=80"
+                  src="./assets/Picture4.png"
                   alt="Dattes Fourrées"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
